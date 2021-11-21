@@ -30,4 +30,4 @@ jobs:
      steps:
      - uses: actions/checkout@v2
      - name: action-zip
-       run: dir
+       run: dir src\Nft.Decrypt\bin\Release\net5.0\
