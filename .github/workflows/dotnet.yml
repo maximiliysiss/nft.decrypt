@@ -32,11 +32,9 @@ jobs:
        with:
         dotnet-version: 5.0.x
      - name: Publish
-       run: dotnet publish -c Release -r win-x64 --self-contained true -o ./output/
-     - name: Zip
-       run: Compress-Archive ./output Nft.Decrypt.zip
+       run: dotnet publish -c Release -r win-x64 --self-contained true -o ./publish/
      - name: 'Upload Release'
        uses: actions/upload-artifact@v2
        with:
          name: Nft.Decrypt.zip
-         path: Nft.Decrypt.zip
+         path: ./publish
