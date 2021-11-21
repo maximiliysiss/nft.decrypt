@@ -24,8 +24,9 @@ jobs:
     - name: Publish
       run: dotnet publish -c Release -r win-x64 --self-contained true
   release:
+     needs: build
      runs-on: windows-latest
  
      steps:
      - name: action-zip
-       run: ls src/
+       run: ls
