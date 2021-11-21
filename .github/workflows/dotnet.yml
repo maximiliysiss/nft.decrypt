@@ -32,6 +32,6 @@ jobs:
        with:
         dotnet-version: 5.0.x
      - name: Publish
-       run: dotnet publish -c Release -r win-x64 --self-contained true
+       run: dotnet publish -c Release -r win-x64 --self-contained true -o ./output/
      - name: create artifact
-       run: dir src\Nft.Decrypt\bin\Release\net5.0\
+       run: dir output
