@@ -28,11 +28,4 @@ jobs:
  
      steps:
      - name: action-zip
-       uses: montudor/action-zip@v1.0.0
-       with:
-         args: zip -qq -r nft.decrypt.zip src\Nft.Decrypt\bin\Release\net5.0\win-x64\publish\
-     - name: Download a Build Artifact
-       uses: actions/download-artifact@v2.0.10
-       with:
-         name: Nft.Decrypt.zip
-         path: nft.decrypt.zip
+       run: ls src/
