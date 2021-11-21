@@ -1,0 +1,38 @@
+name: .NET
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Publish
+      run: dotnet publish -c Release -r win-x64 --self-contained true
+  release:
+     runs-on: windows-latest
+ 
+     steps:
+     - name: action-zip
+       uses: montudor/action-zip@v1.0.0
+       with:
+         args: zip -qq -r nft.decrypt.zip src\Nft.Decrypt\bin\Release\net5.0\win-x64\publish\
+     - name: Download a Build Artifact
+       uses: actions/download-artifact@v2.0.10
+       with:
+         name: Nft.Decrypt.zip
+         path: nft.decrypt.zip
