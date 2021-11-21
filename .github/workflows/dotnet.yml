@@ -33,5 +33,5 @@ jobs:
         dotnet-version: 5.0.x
      - name: Publish
        run: dotnet publish -c Release -r win-x64 --self-contained true -o ./output/
-     - name: create artifact
-       run: dir output
+     - name: Zip
+       run: Compress-Archive ./output Nft.Decrypt.zip
