@@ -21,13 +21,17 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-    - name: Publish
-      run: dotnet publish -c Release -r win-x64 --self-contained true
   release:
      needs: build
      runs-on: windows-latest
  
      steps:
      - uses: actions/checkout@v2
-     - name: action-zip
+     - name: Setup .NET
+       uses: actions/setup-dotnet@v1
+       with:
+        dotnet-version: 5.0.x
+     - name: Publish
+       run: dotnet publish -c Release -r win-x64 --self-contained true
+     - name: create artifact
        run: dir src\Nft.Decrypt\bin\Release\net5.0\
