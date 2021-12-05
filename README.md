@@ -4,8 +4,6 @@
 
 ## Important information
 
-> Only for windows
-
 Use to get information from NFT downloaded from [Collection](https://opensea.io/collection/remember-days)
 
 ## Releases 
@@ -13,4 +11,4 @@ Use to get information from NFT downloaded from [Collection](https://opensea.io/
 > Format execute:  
 > nft.decrypt.exe @filePath
 
-[Download release archive for Windows](https://github.com/maximiliysiss/nft.decrypt/suites/4421097504/artifacts/116927210)
+[Download release archive for Windows](https://github.com/maximiliysiss/nft.decrypt/suites/4557981890/artifacts/122444823)
