@@ -4,7 +4,7 @@
 
 ## Important information
 
-Use to get information from NFT downloaded from [Collection](https://opensea.io/collection/remember-days)
+Use to get information from NFT
 
 ## Releases 
 
