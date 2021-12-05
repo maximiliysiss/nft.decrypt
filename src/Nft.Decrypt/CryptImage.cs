@@ -1,16 +1,11 @@
-﻿using System.Drawing;
+﻿using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.PixelFormats;
 
 namespace Nft.Decrypt
 {
-    public enum State
-    {
-        Hiding,
-        FillingWithZeros
-    };
-
     public static class CryptImage
     {
-        public static string ExtractText(Bitmap bmp)
+        public static string ExtractText(Image<Rgb24> bmp)
         {
             var colorUnitIndex = 0;
             var charValue = 0;
@@ -20,7 +15,7 @@ namespace Nft.Decrypt
             {
                 for (var j = 0; j < bmp.Width; j++)
                 {
-                    var pixel = bmp.GetPixel(j, i);
+                    var pixel = bmp[j, i];
 
                     for (var n = 0; n < 3; n++)
                     {
